@@ -1,0 +1,57 @@
+$thermometerRadius: 65px;
+$thermometerOutlineColor: black;
+$thermometerBackgroundColor: white;
+$lineWidth: 1px;
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.thermometer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.circle {
+  height: $thermometerRadius;
+  width: $thermometerRadius;
+  border: $thermometerOutlineColor solid $lineWidth;
+  background-color: $thermometerBackgroundColor;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.graduation, .hand {
+  background: $thermometerOutlineColor;
+}
+
+.graduation {
+  width: 100%;
+  height: $lineWidth;
+  position: absolute;
+  top: $thermometerRadius;
+}
+
+.hand {
+  position: absolute;
+  top: -$lineWidth/2;
+  left: calc(50% - $lineWidth/2);
+  width: $lineWidth;
+  height: calc(50% + $lineWidth);
+  transform-origin: bottom;
+}
+
+.min-graduation {
+  transform-origin: top left;
+  transform: rotate(-45deg);
+}
+
+.max-graduation {
+  transform-origin: top right;
+  transform: rotate(45deg);
+}

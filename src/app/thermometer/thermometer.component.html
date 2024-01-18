@@ -1,0 +1,8 @@
+<div class="thermometer">
+  <div class="graduation min-graduation"></div>
+  <div class="graduation max-graduation"></div>
+  <div class="circle">
+    <div class="hand" [style.transform]="'rotate(' + handRotateDeg + 'deg)'"></div>
+  </div>
+  <p>{{currentTemperature}}{{temperatureUnit}}</p>
+</div>
